@@ -4,10 +4,10 @@
 #
 ################################################################################
 
-PYTHON_CAN_VERSION = 2.2.1
-PYTHON_CAN_SITE = https://files.pythonhosted.org/packages/e6/49/7a25ca6f38421009621b9958a725a0bd57dc0caa656ee508324f26ea5363
+PYTHON_CAN_VERSION = 3.3.3
+PYTHON_CAN_SITE = https://files.pythonhosted.org/packages/b0/fa/8c6eb8988130f256db4c3cf84537c44684dbb3d528d2e1a1d2209eac4d90
+PYTHON_CAN_SETUP_TYPE = setuptools
 PYTHON_CAN_LICENSE = LGPL-3.0
 PYTHON_CAN_LICENSE_FILES = LICENSE.txt
-PYTHON_CAN_SETUP_TYPE = setuptools
 
 $(eval $(python-package))

@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-SDL2_VERSION = 2.0.8
+SDL2_VERSION = 2.0.12
 SDL2_SOURCE = SDL2-$(SDL2_VERSION).tar.gz
 SDL2_SITE = http://www.libsdl.org/release
 SDL2_LICENSE = Zlib
@@ -28,6 +28,18 @@ SDL2_DEPENDENCIES += udev
 SDL2_CONF_OPTS += --enable-libudev
 else
 SDL2_CONF_OPTS += --disable-libudev
+endif
+
+ifeq ($(BR2_X86_CPU_HAS_SSE),y)
+SDL2_CONF_OPTS += --enable-sse
+else
+SDL2_CONF_OPTS += --disable-sse
+endif
+
+ifeq ($(BR2_X86_CPU_HAS_3DNOW),y)
+SDL2_CONF_OPTS += --enable-3dnow
+else
+SDL2_CONF_OPTS += --disable-3dnow
 endif
 
 ifeq ($(BR2_PACKAGE_SDL2_DIRECTFB),y)
